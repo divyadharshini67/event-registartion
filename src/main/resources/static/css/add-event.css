@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background: #f4f6fb;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-container {
+    width: 100%;
+    padding: 30px 20px;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 650px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 16px;
+
+    box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+
+.form-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.form-header h1 {
+    color: #222;
+
+    margin-bottom: 8px;
+}
+
+.form-header p {
+    color: #777;
+}
+
+/* Form */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #667eea;
+
+    box-shadow:
+            0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+/* Date + Time */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+/* Actions */
+
+.form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.cancel-btn,
+.add-btn {
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: #eef0f6;
+
+    color: #444;
+}
+
+.cancel-btn:hover {
+    background: #dfe2ea;
+}
+
+.add-btn {
+    border: none;
+
+    background: #667eea;
+
+    color: white;
+}
+
+.add-btn:hover {
+    background: #5568d8;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .page-container {
+        padding: 20px 15px;
+    }
+
+    .form-card {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .cancel-btn,
+    .add-btn {
+        width: 100%;
+
+        text-align: center;
+    }
+}

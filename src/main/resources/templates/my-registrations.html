@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Registrations</title>
+
+    <link rel="stylesheet" th:href="@{/css/my-registrations.css}">
+
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <div class="page-header">
+
+        <div>
+            <h1>My Registrations</h1>
+            <p>View and manage the events you have registered for.</p>
+        </div>
+
+        <a href="/dashboard" class="dashboard-btn">
+            ← Dashboard
+        </a>
+
+    </div>
+
+    <!-- No Registrations -->
+
+    <div class="empty-card"
+         th:if="${#lists.isEmpty(registrations)}">
+
+        <div class="empty-icon">📋</div>
+
+        <h2>No Registrations Yet</h2>
+
+        <p>
+            You have not registered for any events yet.
+        </p>
+
+        <a href="/events" class="events-btn">
+            Browse Events
+        </a>
+
+    </div>
+
+    <!-- Registrations -->
+
+    <div class="registrations-list"
+         th:unless="${#lists.isEmpty(registrations)}">
+
+        <div class="registration-card"
+             th:each="registration : ${registrations}">
+
+            <div th:with="event=${eventService.getEventById(registration.eventId)}">
+
+                <div class="card-header">
+
+                    <h2 th:text="${event.title}">
+                        Event Title
+                    </h2>
+
+                    <span class="registered-badge">
+                        Registered
+                    </span>
+
+                </div>
+
+                <p class="description"
+                   th:text="${event.description}">
+                    Event description
+                </p>
+
+                <div class="event-info">
+
+                    <div class="info-item">
+                        <span class="label">📅 Date</span>
+                        <span class="value"
+                              th:text="${event.date}">
+                            Date
+                        </span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">⏰ Time</span>
+                        <span class="value"
+                              th:text="${event.time}">
+                            Time
+                        </span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">📍 Location</span>
+                        <span class="value"
+                              th:text="${event.location}">
+                            Location
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="card-actions">
+
+                    <a th:href="@{/registration/cancel/{id}(id=${registration.id})}"
+                       class="cancel-btn"
+                       onclick="return confirm('Cancel this registration?')">
+
+                        Cancel Registration
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="bottom-links">
+
+        <a href="/events">
+            View All Events
+        </a>
+
+        <a href="/dashboard">
+            Back to Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

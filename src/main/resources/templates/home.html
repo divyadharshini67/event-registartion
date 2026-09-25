@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Event Registration System</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/home.css}">
+
+</head>
+
+<body>
+
+<div class="home-container">
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Event<span>Hub</span>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/login">
+                User Login
+            </a>
+
+            <a href="/register">
+                Register
+            </a>
+
+            <a href="/admin/login"
+               class="admin-link">
+                Admin
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🎉 Event Registration Made Easy
+            </div>
+
+            <h1>
+                Discover Events.<br>
+                <span>Register & Participate.</span>
+            </h1>
+
+            <p>
+                Find exciting events, register easily,
+                and manage all your event registrations
+                from one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/events"
+                   class="primary-btn">
+                    Explore Events
+                </a>
+
+                <a href="/register"
+                   class="secondary-btn">
+                    Create Account
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Hero Card -->
+
+        <div class="hero-card">
+
+            <div class="calendar-icon">
+                📅
+            </div>
+
+            <h2>
+                Upcoming Events
+            </h2>
+
+            <p>
+                Join events that interest you
+                and reserve your spot today.
+            </p>
+
+            <div class="feature-list">
+
+                <div>
+                    ✓ Easy Registration
+                </div>
+
+                <div>
+                    ✓ View Event Details
+                </div>
+
+                <div>
+                    ✓ Manage Registrations
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Features -->
+
+    <section class="features">
+
+        <h2>
+            Everything You Need
+        </h2>
+
+        <p class="section-description">
+            A simple platform to discover and manage events.
+        </p>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Explore Events
+                </h3>
+
+                <p>
+                    Browse available events
+                    and view complete event details.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Easy Registration
+                </h3>
+
+                <p>
+                    Register for your favorite events
+                    with just a few clicks.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📋
+                </div>
+
+                <h3>
+                    Manage Registrations
+                </h3>
+
+                <p>
+                    View your registered events
+                    and cancel registrations when needed.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Event Registration System
+        </p>
+
+    </footer>
+
+</div>
+
+</body>
+
+</html>

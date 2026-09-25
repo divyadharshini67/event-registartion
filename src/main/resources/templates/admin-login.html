@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login</title>
+
+    <link rel="stylesheet" th:href="@{/css/admin-login.css}">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <div class="admin-icon">
+            🔐
+        </div>
+
+        <h1>Admin Login</h1>
+
+        <p class="subtitle">
+            Sign in to manage events
+        </p>
+
+        <!-- Login Error -->
+
+        <div class="error-message"
+             th:if="${error}"
+             th:text="${error}">
+        </div>
+
+        <form action="/admin/login" method="post">
+
+            <div class="form-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter admin username"
+                        required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter admin password"
+                        required>
+
+            </div>
+
+            <button type="submit" class="login-btn">
+                Admin Login
+            </button>
+
+        </form>
+
+        <a href="/" class="home-link">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

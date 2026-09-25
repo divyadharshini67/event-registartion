@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: #f4f6fb;
+}
+
+.dashboard-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+/* Header */
+
+.dashboard-header {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-header h1 {
+    color: #222;
+    margin-bottom: 6px;
+}
+
+.dashboard-header p {
+    color: #777;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Buttons */
+
+.add-btn,
+.home-btn {
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.add-btn {
+    background: #667eea;
+    color: white;
+}
+
+.add-btn:hover {
+    background: #5568d8;
+}
+
+.home-btn {
+    background: #eef0f6;
+    color: #333;
+}
+
+.home-btn:hover {
+    background: #dfe2ea;
+}
+
+/* Section */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    color: #222;
+}
+
+.section-heading span {
+    background: #e9ecff;
+    color: #667eea;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Grid */
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Card */
+
+.event-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.event-card-header h3 {
+    color: #667eea;
+
+    margin-bottom: 12px;
+}
+
+.description {
+    color: #666;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+/* Information */
+
+.event-info {
+    background: #f7f8fc;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 9px 5px;
+
+    border-bottom: 1px solid #ddd;
+
+    color: #666;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: bold;
+    color: #444;
+}
+
+/* Actions */
+
+.event-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.event-actions a {
+    text-decoration: none;
+
+    padding: 9px 13px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.edit-btn {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.edit-btn:hover {
+    background: #ffe69c;
+}
+
+.delete-btn {
+    background: #ffe5e5;
+    color: #d00000;
+}
+
+.delete-btn:hover {
+    background: #ffcaca;
+}
+
+.registration-btn {
+    background: #e6f7ed;
+    color: #198754;
+}
+
+.registration-btn:hover {
+    background: #ccefd9;
+}
+
+/* Empty */
+
+.empty-card {
+    background: white;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.empty-icon {
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+.empty-card h3 {
+    color: #222;
+
+    margin-bottom: 10px;
+}
+
+.empty-card p {
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .dashboard-container {
+        width: 94%;
+        padding: 20px 0;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .header-actions {
+        width: 100%;
+    }
+
+    .header-actions a {
+        flex: 1;
+        text-align: center;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .event-actions {
+        flex-direction: column;
+    }
+
+    .event-actions a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

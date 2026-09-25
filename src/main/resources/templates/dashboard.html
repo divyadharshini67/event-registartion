@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>User Dashboard</title>
+
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <div class="dashboard-header">
+
+        <div>
+            <h1>User Dashboard</h1>
+            <p>Manage your events and registrations</p>
+        </div>
+
+        <a href="/logout" class="logout-btn">
+            Logout
+        </a>
+
+    </div>
+
+    <div class="welcome-card">
+
+        <h2>
+            Welcome,
+            <span th:text="${user.name}"></span>!
+        </h2>
+
+        <p>
+            Email:
+            <span th:text="${user.email}"></span>
+        </p>
+
+    </div>
+
+    <h2 class="section-title">Available Options</h2>
+
+    <div class="options">
+
+        <a href="/events" class="option-card">
+
+            <div class="icon">📅</div>
+
+            <h3>View All Events</h3>
+
+            <p>
+                Explore available events and register for the ones you like.
+            </p>
+
+        </a>
+
+        <a href="/my-registrations" class="option-card">
+
+            <div class="icon">📋</div>
+
+            <h3>My Registrations</h3>
+
+            <p>
+                View and manage the events you have registered for.
+            </p>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

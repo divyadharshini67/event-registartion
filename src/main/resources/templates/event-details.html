@@ -1,0 +1,111 @@
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Details</title>
+
+    <link rel="stylesheet" th:href="@{/css/event-details.css}">
+
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <div class="event-card">
+
+        <h1>Event Details</h1>
+
+        <div class="event-content">
+
+            <h2 th:text="${event.title}">
+                Event Title
+            </h2>
+
+            <p class="description"
+               th:text="${event.description}">
+                Event description
+            </p>
+
+            <div class="event-info">
+
+                <div class="info-item">
+                    <span class="label">Date</span>
+                    <span class="value"
+                          th:text="${event.date}">
+                            Date
+                        </span>
+                </div>
+
+                <div class="info-item">
+                    <span class="label">Time</span>
+                    <span class="value"
+                          th:text="${event.time}">
+                            Time
+                        </span>
+                </div>
+
+                <div class="info-item">
+                    <span class="label">Location</span>
+                    <span class="value"
+                          th:text="${event.location}">
+                            Location
+                        </span>
+                </div>
+
+            </div>
+
+            <!-- Already Registered Message -->
+
+            <div class="error-message"
+                 th:if="${param.error != null and param.error[0] == 'alreadyRegistered'}">
+
+                You are already registered for this event.
+
+            </div>
+
+            <div class="register-section">
+
+                <h3>Register for this Event</h3>
+
+                <form action="/events/register"
+                      method="post">
+
+                    <input type="hidden"
+                           name="eventId"
+                           th:value="${event.id}">
+
+                    <button type="submit"
+                            class="register-btn">
+
+                        Register for Event
+
+                    </button>
+
+                </form>
+
+            </div>
+
+            <a href="/events"
+               class="back-link">
+
+                ← Back to Events
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+

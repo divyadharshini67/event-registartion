@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Registrations</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/event-registrations.css}">
+
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <!-- Header -->
+
+    <div class="page-header">
+
+        <div>
+
+            <p class="page-label">
+                ADMINISTRATION
+            </p>
+
+            <h1>Event Registrations</h1>
+
+            <h2>
+                Event:
+                <span th:text="${event.title}">
+                    Event Name
+                </span>
+            </h2>
+
+        </div>
+
+        <a href="/admin/dashboard"
+           class="back-btn">
+            ← Dashboard
+        </a>
+
+    </div>
+
+    <!-- No Registrations -->
+
+    <div class="empty-card"
+         th:if="${#lists.isEmpty(registrations)}">
+
+        <div class="empty-icon">
+            📋
+        </div>
+
+        <h2>No Registrations Yet</h2>
+
+        <p>
+            No users have registered for this event yet.
+        </p>
+
+    </div>
+
+    <!-- Registered Users -->
+
+    <div class="registrations-card"
+         th:unless="${#lists.isEmpty(registrations)}">
+
+        <div class="table-header">
+
+            <div>
+
+                <h3>Registered Users</h3>
+
+                <p>
+                    Users who have registered for this event
+                </p>
+
+            </div>
+
+            <span class="count-badge"
+                  th:text="${#lists.size(registrations)}">
+                0
+            </span>
+
+        </div>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Registration ID</th>
+
+                    <th>User ID</th>
+
+                    <th>User Name</th>
+
+                    <th>Email</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr th:each="registration : ${registrations}">
+
+                    <td>
+                        <span class="registration-id"
+                              th:text="${registration.id}">
+                            1
+                        </span>
+                    </td>
+
+                    <td th:text="${registration.userId}">
+                        123
+                    </td>
+
+                    <td th:if="${registrationService.getUserById(registration.userId) != null}"
+                        th:text="${registrationService.getUserById(registration.userId).name}">
+                        User Name
+                    </td>
+
+                    <td th:if="${registrationService.getUserById(registration.userId) != null}"
+                        th:text="${registrationService.getUserById(registration.userId).email}">
+                        user@gmail.com
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <a href="/admin/dashboard"
+       class="bottom-link">
+        ← Back to Admin Dashboard
+    </a>
+
+</div>
+
+</body>
+
+</html>
